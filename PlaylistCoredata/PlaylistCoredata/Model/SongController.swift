@@ -15,15 +15,15 @@ class SongController {
     
     
     //MARK: CRUD
-    func createSong(with title: String, artist: String, addTo playlist: Playlist){
+   static func createSong(with title: String, artist: String, addTo playlist: Playlist){
         Song(title: title, artist: artist, playlist: playlist)
-        PlaylistController.sharedInstance.saveToPersistenStore()
+        PlaylistController.sharedInstance.saveToPersistentStore()
         
     }
     
-    func deleteSong(song: Song){
+  static func deleteSong(song: Song){
         CoreDataStack.context.delete(song)
-        PlaylistController.sharedInstance.saveToPersistenStore()
+        PlaylistController.sharedInstance.saveToPersistentStore()
         
     }
     

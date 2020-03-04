@@ -24,14 +24,14 @@ class  PlaylistController {
     
     func createPlaylist(with name: String){
         Playlist(name: name)
-        saveToPersistenStore()
+        saveToPersistentStore()
     }
-    func deletePlaylis(playlist: Playlist){
+    func deletePlaylist(playlist: Playlist){
             CoreDataStack.context.delete(playlist)
-            saveToPersistenStore()
+            saveToPersistentStore()
     }
     
-    func saveToPersistenStore(){
+    func saveToPersistentStore(){
         do{
             try CoreDataStack.context.save()
         }catch{
