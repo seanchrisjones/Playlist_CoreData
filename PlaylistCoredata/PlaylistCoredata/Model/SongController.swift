@@ -13,8 +13,7 @@ import CoreData
 class SongController {
     
     
-    //MARK: SOURCE OF TRUTH
-    //MARK: SINGLETON
+    
     //MARK: CRUD
     func createSong(with title: String, artist: String, addTo playlist: Playlist){
         Song(title: title, artist: artist, playlist: playlist)
